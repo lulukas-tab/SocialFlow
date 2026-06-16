@@ -15,9 +15,6 @@ import {
   Switch,
 } from 'react-native';
 
-// ============================================
-// CUSTOM HOOKS
-// ============================================
 
 const useAuth = () => {
   const [user, setUser] = useState(null);
@@ -135,9 +132,7 @@ const getThemeColors = (isDark) => {
   };
 };
 
-// ============================================
-// COMPONENTES
-// ============================================
+
 
 const LoadingSpinner = ({ size = 'large', color = '#4A90E2' }) => (
   <View style={styles.loadingContainer}>
@@ -187,7 +182,7 @@ const LoginScreen = ({ onLoginSuccess, isDark }) => {
       const user = await login(email, password);
       onLoginSuccess(user);
     } catch (error) {
-      // Erro já foi mostrado no hook
+     
     }
   };
 
@@ -564,9 +559,7 @@ const ProfileScreen = ({ user, onLogout, isDark, onToggleDarkMode, onNavigateToS
   );
 };
 
-// ============================================
-// APP PRINCIPAL
-// ============================================
+
 
 export default function App() {
   const { user, isAuthenticated, logout } = useAuth();
@@ -686,9 +679,7 @@ export default function App() {
   );
 }
 
-// ============================================
-// ESTILOS
-// ============================================
+
 
 const styles = StyleSheet.create({
   appContainer: { flex: 1 },
